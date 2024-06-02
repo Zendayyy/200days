@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iu emmmmm</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('iuem.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #videoContainer {
+    position: relative;
+    height: 100vh;
+    z-index: 2;
+  }
+  #videoPlayer {
+    height: 100%;
+    display: none;
+  }
+  #thankYouMessage {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:palevioletred;
+    width: 500px;
+    height: 300px;
+    border: 3px solid rgb(98, 98, 98);
+    text-align: center;
+    color: aliceblue;
+    z-index: 3;
+  }
+  #overlay {
+    position: fixed; /* Use fixed position to cover the whole screen */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1; /* Make sure it's above other elements */
+    display: none; /* Hide it initially */
+  }
+  button {
+    position: fixed;
+	top: 88%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	outline: none;
+	border: none;
+	height: 50px;
+	width: 50px;
+    border-radius: 50%;
+	font-size: 40px;
+	cursor: pointer;
+	box-shadow: 0 0 5px #aba4a4;
+	background-color:rgb(255, 255, 255);
+	transition: 0.25s;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center;
+    color: pink;
+
+  }
+
+  /* Hide the video controls */
+  video::-webkit-media-controls {
+    display: none !important;
+  }
+</style>
+</head>
+<body>
+    <div id="overlay"></div> 
+<button id="playButton">
+    <div class="text">
+    <h7>♥</h7>
+</div></button>
+
+<div id="videoContainer">
+  <video id="videoPlayer" width="auto" height="auto">
+    <source src="iuem.mp4" type="video/mp4">
+  </video>
+  <div id="thankYouMessage">
+    <div class="text">
+    <h>Nay tròn 200 ngày anh bám vợ iuu òi á!</h>
+    <p>200 ngày qua nhiều lúc anh có làm em iu buồn nhưng mà em vẫn tha lỗi cho anh,luôn quan tâm
+        và lo lắng cho anh, anh thấy quãng thời gian vừa qua là quãng thời gian tuyệt với nhất từ trước tới giờ
+    và anh mong là từ bây giờ trở về sau và mãi mãi mình vẫn ở bên nhau em nhaa và quãng thời gian bên nhau cũng luôn tuyệt vời như vậy,chắc chắn anh sẽ cưới đc em và lo cho em suốt cuộc đời ngày.
+Chúc cho cô gái của anh hãy luôn nở nụ cười nha,ngày càng iuu anh nhìu hơn,mấy lúc anh làm vợ bùn cũm tha lỗi cho anh nho,
+chúc vợ iu của anh tất cả trừ vất vả ạ</p>
+<p2>♥ANH THƯƠNG EM♥ </p2>
+</div>
+    <button id="closeButton">♥</button>
+  </div>
+</div>
+<script>
+    document.getElementById('playButton').addEventListener('click', function() {
+      var overlay = document.getElementById('overlay');
+      var videoPlayer = document.getElementById('videoPlayer');
+      overlay.style.display = 'block';
+      videoPlayer.style.display = 'block';
+      videoPlayer.play();
+      this.style.display = 'none';
+    });
+  
+    document.getElementById('videoPlayer').addEventListener('ended', function() {
+      this.style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+    });
+  
+    document.getElementById('closeButton').addEventListener('click', function() {
+      var overlay = document.getElementById('overlay');
+      var videoPlayer = document.getElementById('videoPlayer');
+      var thankYouMessage = document.getElementById('thankYouMessage');
+      thankYouMessage.style.display = 'none';
+      videoPlayer.style.display = 'none';
+      overlay.style.display = 'none';
+      document.getElementById('playButton').style.display = 'block';
+    });
+  </script>
+  
+  </body>
+  </html>
